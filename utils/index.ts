@@ -36,10 +36,12 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
 
 export const updateSearchParams = (type: string, value: string) => {
     // Get the current URL search params
+
     const searchParams = new URLSearchParams(window.location.search);
 
     // Set the specified search parameter to the given value
     searchParams.set(type, value);
+
 
     // Set the specified search parameter to the given value
     const newPathname = `${
@@ -93,7 +95,7 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
 
     url.searchParams.append(
         "customer",
-        process.env.NEXT_PUBLIC_IMAGIN_API_KEY || ""
+        process.env.NEXT_PUBLIC_IMAGIN_API_KEY || "hrjavascript-mastery"
     );
     url.searchParams.append("make", make);
     url.searchParams.append("modelFamily", model.split(" ")[0]);
